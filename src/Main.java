@@ -9,5 +9,9 @@ public class Main {
         LinkedList<Fighter> fighters = new LinkedList<Fighter>();
         Random random = new Random();
 
+        for (int i = 0; i <1 ; i++) {
+          fighters.add(new Fighter("Fighter #"+i));
+        }
+
     }
 }

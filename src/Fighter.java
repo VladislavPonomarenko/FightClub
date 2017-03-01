@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by wp-1-09 on 01.03.2017.
  */
@@ -8,12 +10,35 @@ public class Fighter {
     private int intuition;
     private int xp;
 
-    public Fighter(String name, int forse, int dexterity, int intuition, int xp) {
+    Random random = new Random();
+
+    public Fighter(String name) {
         this.name = name;
-        this.forse = forse;
-        this.dexterity = dexterity;
-        this.intuition = intuition;
-        this.xp = xp;
+        forse = random.nextInt(100)+1;
+        dexterity = random.nextInt(100)+1;
+        intuition = random.nextInt(100)+1;
+        xp = 100;
+
+        System.out.println(this.toString());
+
+        int sum = forse+dexterity+intuition;
+        System.out.println("SUM="+sum);
+
+        float coef = (float)50/sum;
+
+        System.out.println("coef="+coef);
+
+
+        forse *= coef;
+        dexterity*= coef;
+        intuition*= coef;
+
+        if(forse<1)
+            forse=1;
+
+
+
+        System.out.println(this.toString());
     }
 
     public String getName() {
@@ -54,5 +79,16 @@ public class Fighter {
 
     public void setXp(int xp) {
         this.xp = xp;
+    }
+
+    @Override
+    public String toString() {
+        return "Fighter{" +
+                "name='" + name + '\'' +
+                ", forse=" + forse +
+                ", dexterity=" + dexterity +
+                ", intuition=" + intuition +
+                ", xp=" + xp +
+                '}';
     }
 }
