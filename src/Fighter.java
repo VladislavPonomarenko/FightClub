@@ -19,6 +19,8 @@ public class Fighter {
         intuition = random.nextInt(100)+1;
         xp = 100;
 
+
+
         System.out.println(this.toString());
 
         int sum = forse+dexterity+intuition;
