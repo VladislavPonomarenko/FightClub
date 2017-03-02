@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -12,40 +10,44 @@ public class Arena {
 
 
         if (random.nextBoolean() == true) {
-            System.out.println("GO fighter" + fighter1);
+            System.out.println("GO fighter <<<" + fighter1.getName()+">>>");
 
-            do{
-                Fighter1(fighter1, fighter2);
-                Fighter2(fighter1, fighter2);
 
-            }while (fighter2.getXp() != 0 && fighter2.getXp() > 0 && fighter1.getXp() != 0 && fighter1.getXp() > 0);
+
+
+             while (fighter2.getXp() != 0 && fighter2.getXp() > 0 && fighter1.getXp() != 0 && fighter1.getXp() > 0){
+                 Fighter1(fighter1, fighter2);
+                 Fighter2(fighter1, fighter2);
+             }
+
             if (fighter2.getXp() == 0 || fighter2.getXp() < 0) {
                 fighter2.setXp(0);
                 System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp");
                 System.out.println("Win " + fighter1.getName());
-            }else{
+            } else {
                 fighter1.setXp(0);
                 System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp");
                 System.out.println("Win " + fighter2.getName());
             }
 
         } else {
-            System.out.println("GO fighter" + fighter2);
 
-           do{
+            System.out.println("GO fighter <<<" + fighter2.getName()+">>>");
 
-            Fighter2(fighter1, fighter2);
-            Fighter1(fighter1, fighter2);
-        } while (fighter2.getXp() != 0 && fighter2.getXp() > 0 && fighter1.getXp() != 0 && fighter1.getXp() > 0);
-                if (fighter1.getXp() == 0 || fighter1.getXp() < 0) {
-                    fighter1.setXp(0);
-                    System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp");
-                    System.out.println("Win " + fighter2.getName());
-                }else{
-                    fighter2.setXp(0);
-                    System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp");
-                    System.out.println("Win " + fighter1.getName());
-                }
+             while (fighter2.getXp() != 0 && fighter2.getXp() > 0 && fighter1.getXp() != 0 && fighter1.getXp() > 0){
+                 Fighter2(fighter1, fighter2);
+                 Fighter1(fighter1, fighter2);
+             }
+
+            if (fighter1.getXp() == 0 || fighter1.getXp() < 0) {
+                fighter1.setXp(0);
+                System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp");
+                System.out.println("Win " + fighter2.getName());
+            } else {
+                fighter2.setXp(0);
+                System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp");
+                System.out.println("Win " + fighter1.getName());
+            }
         }
     }
 

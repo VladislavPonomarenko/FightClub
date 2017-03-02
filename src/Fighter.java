@@ -20,15 +20,10 @@ public class Fighter {
         xp = 100;
 
 
-
-       // System.out.println(this.toString()+"\n");
-
         int sum = forse+dexterity+intuition;
-     //   System.out.println("SUM="+sum);
 
         float coef = (float)50/sum;
 
-    //    System.out.println("coef="+coef);
 
 
         forse *= coef;
@@ -38,8 +33,6 @@ public class Fighter {
         if(forse<1)
             forse=1;
 
-
-     //   System.out.println(this.toString());
     }
 
 
