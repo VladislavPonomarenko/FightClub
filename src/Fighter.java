@@ -21,14 +21,14 @@ public class Fighter {
 
 
 
-        System.out.println(this.toString());
+       // System.out.println(this.toString()+"\n");
 
         int sum = forse+dexterity+intuition;
-        System.out.println("SUM="+sum);
+     //   System.out.println("SUM="+sum);
 
         float coef = (float)50/sum;
 
-        System.out.println("coef="+coef);
+    //    System.out.println("coef="+coef);
 
 
         forse *= coef;
@@ -39,9 +39,9 @@ public class Fighter {
             forse=1;
 
 
-
-        System.out.println(this.toString());
+     //   System.out.println(this.toString());
     }
+
 
     public String getName() {
         return name;
