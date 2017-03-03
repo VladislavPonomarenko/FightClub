@@ -53,25 +53,37 @@ public class Arena {
 
     public void Fighter1(Fighter fighter1, Fighter fighter2) {
         Random random = new Random();
-        int cnt = fighter2.getXp();
-        if (cnt != 0 && cnt > 0) {
-            fighter2.setXp(fighter2.getXp() - fighter1.getForse());
-            System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp" + "(-" + (cnt - fighter2.getXp()) + ")");
-            fighter1.setForse(random.nextInt(30) + 1);
+        double krit=random.nextDouble();
+        int differenceXp = fighter2.getXp();
+        if (differenceXp != 0 && differenceXp > 0) {
+
+            if(krit<(double)1/3){
+                fighter2.setXp(fighter2.getXp() - (fighter1.getForse()*2));
+                System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp" + "(-" + (differenceXp - fighter2.getXp()) + " krit)");
+            }else {
+                fighter2.setXp(fighter2.getXp() - fighter1.getForse());
+                System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp" + "(-" + (differenceXp - fighter2.getXp()) + ")");
+                fighter1.setForse(random.nextInt(30) + 1);
+            }
         }
-        cnt = fighter2.getXp();
+        differenceXp = fighter2.getXp();
 
     }
 
     public void Fighter2(Fighter fighter1, Fighter fighter2) {
         Random random = new Random();
-        int cnt = fighter1.getXp();
-        if (cnt != 0 && cnt > 0) {
+        int differenceXp = fighter1.getXp();
+        double krit=random.nextDouble();
+        if (differenceXp != 0 && differenceXp > 0) {
+            if(krit<(double)1/3){
+                fighter1.setXp(fighter1.getXp() - (fighter2.getForse()*2));
+                System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp" + "(-" + (differenceXp - fighter1.getXp()) + " krit)");
+            }else {
             fighter1.setXp(fighter1.getXp() - fighter2.getForse());
-            System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp" + "(-" + (cnt - fighter1.getXp()) + ")");
+            System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp" + "(-" + (differenceXp - fighter1.getXp()) + ")");
             fighter2.setForse(random.nextInt(29) + 2);
-        }
-        cnt = fighter1.getXp();
+        }}
+        differenceXp = fighter1.getXp();
     }
 
 }

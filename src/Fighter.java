@@ -19,11 +19,9 @@ public class Fighter {
         intuition = random.nextInt(100)+1;
         xp = 100;
 
-
         int sum = forse+dexterity+intuition;
 
         float coef = (float)50/sum;
-
 
 
         forse *= coef;
@@ -32,6 +30,7 @@ public class Fighter {
 
         if(forse<1)
             forse=1;
+
 
     }
 
