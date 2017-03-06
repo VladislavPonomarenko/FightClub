@@ -12,7 +12,7 @@ public class Main {
         Arena arena;
         LinkedList<Fighter> fighters = new LinkedList<Fighter>();
         LinkedList<Fighter> fighterstwo = new LinkedList<Fighter>();
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 8; i++) {
             fighters.add(new Fighter("Fighter #" + i));
 
         }
@@ -21,12 +21,12 @@ public class Main {
         do {
             arena = new Arena(fighters.pop(), fighters.pop());
             fighterstwo.addAll(arena.fighterLinkedList);
-            if (fighterstwo.size() == 7) {
-                do {
+            if (fighterstwo.size() == 4) {
+                while (fighterstwo.size() != 0) {
                     arena = new Arena(fighterstwo.pop(), fighterstwo.pop());
                     fighterstwo.addAll(arena.fighterLinkedList);
 
-                } while (fighterstwo.size() != 0);
+                }
             }
         } while (true);
 
