@@ -21,12 +21,14 @@ public class Main {
         do {
             arena = new Arena(fighters.pop(), fighters.pop());
             fighterstwo.addAll(arena.fighterLinkedList);
-            if (fighterstwo.size()==7){
-            do {
-                arena= new Arena(fighterstwo.pop(),fighterstwo.pop());
-                fighterstwo.addAll(arena.fighterLinkedList);
-            }while (fighterstwo.size()!=0);}
-        }while (true);
+            if (fighterstwo.size() == 7) {
+                do {
+                    arena = new Arena(fighterstwo.pop(), fighterstwo.pop());
+                    fighterstwo.addAll(arena.fighterLinkedList);
+
+                } while (fighterstwo.size() != 0);
+            }
+        } while (true);
 
     }
 }
