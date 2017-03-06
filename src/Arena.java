@@ -1,19 +1,16 @@
+import java.util.LinkedList;
 import java.util.Random;
 
-/**
- * Created by wp-1-09 on 02.03.2017.
- */
+
 public class Arena {
     Random random = new Random();
+    LinkedList<Fighter> fighterLinkedList = new LinkedList<Fighter>();
 
     Arena(Fighter fighter1, Fighter fighter2) {
 
 
         if (random.nextBoolean() == true) {
             System.out.println("GO fighter <<<" + fighter1.getName()+">>>");
-
-
-
 
              while (fighter2.getXp() != 0 && fighter2.getXp() > 0 && fighter1.getXp() != 0 && fighter1.getXp() > 0){
                  Fighter1(fighter1, fighter2);
@@ -23,11 +20,19 @@ public class Arena {
             if (fighter2.getXp() == 0 || fighter2.getXp() < 0) {
                 fighter2.setXp(0);
                 System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp");
-                System.out.println("Win " + fighter1.getName());
+                System.out.println("\n<<<<<<<<>>>>>>>>");
+                System.out.println("< Win " + fighter1.getName()+" >");
+                System.out.println("<<<<<<<<>>>>>>>>\n\n");
+                fighter1.setXp(100);
+                fighterLinkedList.add(fighter1);
             } else {
                 fighter1.setXp(0);
                 System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp");
-                System.out.println("Win " + fighter2.getName());
+                System.out.println("\n<<<<<<<<>>>>>>>>");
+                System.out.println("< Win " + fighter2.getName()+" >");
+                System.out.println("<<<<<<<<>>>>>>>>\n\n");
+                fighter2.setXp(100);
+                fighterLinkedList.add(fighter2);
             }
 
         } else {
@@ -42,13 +47,23 @@ public class Arena {
             if (fighter1.getXp() == 0 || fighter1.getXp() < 0) {
                 fighter1.setXp(0);
                 System.out.println(fighter1.getName() + ": " + fighter1.getXp() + "xp");
-                System.out.println("Win " + fighter2.getName());
+                System.out.println("<<<<<<<<>>>>>>>>");
+                System.out.println("< Win " + fighter2.getName()+" >");
+                System.out.println("<<<<<<<<>>>>>>>>\n\n");
+                fighter2.setXp(100);
+                fighterLinkedList.add(fighter2);
             } else {
                 fighter2.setXp(0);
                 System.out.println(fighter2.getName() + ": " + fighter2.getXp() + "xp");
-                System.out.println("Win " + fighter1.getName());
+                System.out.println("<<<<<<<<>>>>>>>>");
+                System.out.println("< Win " + fighter1.getName()+" >");
+                System.out.println("<<<<<<<<>>>>>>>>\n\n");
+                fighter1.setXp(100);
+                fighterLinkedList.add(fighter1);
             }
         }
+
+
     }
 
     public void Fighter1(Fighter fighter1, Fighter fighter2) {
@@ -59,7 +74,6 @@ public class Arena {
         fighter2.setIntuition(random.nextInt(10));
         fighter2.setDexterity(random.nextInt(10));
         if (differenceXp != 0 && differenceXp > 0) {
-          //  System.out.println(crit+" : "+fighter2.getIntuition());
             if(crit == fighter2.getDexterity()){
                 System.out.println(fighter2.getName()+": "+fighter2.getXp()+"xp"+"\033[34m (deviation)"+"\033[38m");
             }else
